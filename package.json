@@ -1,0 +1,35 @@
+{
+  "name": "smart-router",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "script": "npx tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@pancakeswap/sdk": "^5.8.8",
+    "@pancakeswap/smart-router": "^6.1.4",
+    "@pancakeswap/tokens": "^0.6.27",
+    "@uniswap/router-sdk": "^1.14.2",
+    "@uniswap/sdk-core": "^5.8.1",
+    "@uniswap/smart-order-router": "^4.5.2",
+    "@uniswap/token-lists": "^1.0.0-beta.34",
+    "@uniswap/universal-router-sdk": "^4.3.1",
+    "@uniswap/v3-sdk": "^3.17.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2",
+    "graphql-request": "^5.0.0",
+    "node-cache": "^5.1.2",
+    "viem": "^1.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}

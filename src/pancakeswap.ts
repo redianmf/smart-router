@@ -4,7 +4,8 @@ import { GraphQLClient } from "graphql-request";
 import type { PublicClient } from "viem";
 import { createPublicClient, http } from "viem";
 import { PancakeSwapSubgraphURL, ProviderURL } from "./config";
-import { getPancakeswapChain } from "./helper";
+import { getDate, getPancakeswapChain } from "./helper";
+import { saveToFile } from "./persistence";
 import { IRouteParams } from "./types";
 
 async function findPancakeswapRoute({
@@ -55,7 +56,12 @@ async function findPancakeswapRoute({
     }
   );
 
-  console.log({ pancakeswap: trade?.routes[0].path });
+  const data = JSON.stringify(trade, (key, value) =>
+    typeof value === "bigint" ? Number(value) : value
+  );
+  const date = getDate();
+
+  await saveToFile(`PANCAKESWAP-${chainName}-${date}.json`, data);
 }
 
 export default findPancakeswapRoute;

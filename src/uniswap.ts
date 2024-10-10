@@ -13,7 +13,8 @@ import {
 import { ethers } from "ethers";
 import NodeCache from "node-cache";
 import { ProviderURL, UniswapSubgraphURL } from "./config";
-import { getUniswapChain } from "./helper";
+import { getDate, getUniswapChain } from "./helper";
+import { saveToFile } from "./persistence";
 import { IRouteParams } from "./types";
 
 async function findUniswapRoute({
@@ -70,7 +71,10 @@ async function findUniswapRoute({
     // options
   );
 
-  console.log({ uniswap: route?.route[0].tokenPath });
+  const data = JSON.stringify(route);
+  const date = getDate();
+
+  await saveToFile(`UNISWAP-${chainName}-${date}.json`, data);
 }
 
 export default findUniswapRoute;

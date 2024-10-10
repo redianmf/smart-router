@@ -15,8 +15,8 @@ async function main() {
   swapUni.route({
     chainName: ChainNameEnum.ARBITRUM,
     token0: arbitrumTokens.usdc,
-    token1: arbitrumTokens.dai,
-    amount: 100,
+    token1: arbitrumTokens.stg,
+    amount: 10,
   });
 
   const swapPancake = routerInstanceFactory.create(ExchangeEnum.PANCAKESWAP);
@@ -29,8 +29,8 @@ async function main() {
   swapPancake.route({
     chainName: ChainNameEnum.ARBITRUM,
     token0: arbitrumTokens.usdc,
-    token1: arbitrumTokens.dai,
-    amount: 100,
+    token1: arbitrumTokens.gmx,
+    amount: 10,
   });
 }
 

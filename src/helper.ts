@@ -19,3 +19,7 @@ export const getPancakeswapChain = (chainName: ChainNameEnum) => {
       return mainnet;
   }
 };
+
+export const getDate = (): string => {
+  return new Date().toJSON().slice(0, 19).replace(/:/g, "");
+};

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "script": "npx tsx"
+    "route": "npx tsx src/index.ts",
+    "transaction": "npx tsx src/getTransactionDetails.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@uniswap/token-lists": "^1.0.0-beta.34",
     "@uniswap/universal-router-sdk": "^4.3.1",
     "@uniswap/v3-sdk": "^3.17.1",
+    "alchemy-sdk": "^3.4.3",
     "dotenv": "^16.4.5",
     "ethers": "^5.7.2",
     "graphql-request": "^5.0.0",

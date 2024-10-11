@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, writeFileSync } from "fs";
 
 export async function saveToFile(fileName: string, data: string) {
   try {
-    const basePath = "./logz";
+    const basePath = "./log";
 
     // Create dir if not exist
     if (!existsSync(basePath)) {

@@ -71,10 +71,19 @@ async function findUniswapRoute({
     // options
   );
 
-  const data = JSON.stringify(route);
-  const date = getDate();
+  if (route) {
+    const rawData = JSON.stringify(route);
+    const date = getDate();
 
-  await saveToFile(`UNISWAP-${chainName}-${date}.json`, data);
+    const data = {
+      route: route?.route?.[0]?.tokenPath?.map((item) => item?.address),
+      poolFee: route?.route?.[0]?.route?.pools?.map((item) => item?.fee),
+    };
+
+    console.log(`UNISWAP-${chainName}`, data);
+
+    await saveToFile(`UNISWAP-${chainName}-${date}.json`, rawData);
+  }
 }
 
 export default findUniswapRoute;

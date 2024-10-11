@@ -56,12 +56,21 @@ async function findPancakeswapRoute({
     }
   );
 
-  const data = JSON.stringify(trade, (key, value) =>
-    typeof value === "bigint" ? Number(value) : value
-  );
-  const date = getDate();
+  if (trade) {
+    const rawData = JSON.stringify(trade, (key, value) =>
+      typeof value === "bigint" ? Number(value) : value
+    );
+    const date = getDate();
 
-  await saveToFile(`PANCAKESWAP-${chainName}-${date}.json`, data);
+    const data = {
+      route: trade?.routes?.[0]?.path?.map((item) => item?.address),
+      poolFee: trade?.routes?.[0]?.pools?.map((item) => item?.fee),
+    };
+
+    console.log(`PANCAKESWAP-${chainName}`, data);
+
+    await saveToFile(`PANCAKESWAP-${chainName}-${date}.json`, rawData);
+  }
 }
 
 export default findPancakeswapRoute;

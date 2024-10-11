@@ -65,6 +65,7 @@ async function findPancakeswapRoute({
     const data = {
       route: trade?.routes?.[0]?.path?.map((item) => item?.address),
       poolFee: trade?.routes?.[0]?.pools?.map((item) => item?.fee),
+      outputAmount: trade?.routes?.[0]?.outputAmount?.toFixed(5),
     };
 
     console.log(`PANCAKESWAP-${chainName}`, data);

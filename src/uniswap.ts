@@ -78,6 +78,7 @@ async function findUniswapRoute({
     const data = {
       route: route?.route?.[0]?.tokenPath?.map((item) => item?.address),
       poolFee: route?.route?.[0]?.route?.pools?.map((item) => item?.fee),
+      outputAmount: route?.trade?.swaps?.[0]?.outputAmount?.toFixed(5),
     };
 
     console.log(`UNISWAP-${chainName}`, data);

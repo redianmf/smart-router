@@ -17,5 +17,15 @@ export const PancakeSwapSubgraphURL =
 
 export const AlchemyConfig = {
   apiKey: process.env.ALCHEMY_API_KEY,
-  network: Network.ARB_MAINNET,
+  network: Network.ETH_MAINNET,
+};
+
+export const WalletAddress = process.env.WALLET_ADDRESS as string;
+
+export const MainnetProviders = {
+  alchemy: process.env.MAINNET_PROVIDER_URL,
+  chainnodes: process.env.CHAINNODES_PROVIDER_URL,
+  chainstack: process.env.CHAINSTACK_PROVIDER_URL,
+  infura: process.env.INFURA_PROVIDER_URL,
+  quickNode: process.env.QUICKNODE_PROVIDER_URL,
 };

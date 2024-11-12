@@ -5,7 +5,9 @@
   "scripts": {
     "route": "npx tsx src/index.ts",
     "transaction": "npx tsx src/getTransactionDetails.ts",
-    "providers": "npx tsx src/providers.ts"
+    "providers": "npx tsx src/providers.ts",
+    "listener": "npx tsx src/listener.ts",
+    "decompile": "npx tsx src/evmole.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "alchemy-sdk": "^3.4.3",
     "dotenv": "^16.4.5",
     "ethers": "^5.7.2",
+    "evmole": "^0.5.1",
     "graphql-request": "^5.0.0",
     "node-cache": "^5.1.2",
     "viem": "^1.21.4"
